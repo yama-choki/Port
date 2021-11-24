@@ -10,6 +10,8 @@
     </v-toolbar-title>
 
     <v-spacer />
+    <Login />
+    <AddPost />
   </v-app-bar>
 </template>
 
