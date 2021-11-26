@@ -59,7 +59,6 @@
                   <v-text-field
                     v-model="post.portfolioUrl"
                     label="ポートフォリオのURL"
-                    hint="URLを添付してください"
                   />
                 </v-col>
                 <v-col

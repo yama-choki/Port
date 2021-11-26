@@ -23,9 +23,9 @@
 
           <div class="container">
             <!-- <p class="title is-1 is-spaced">user:{{ $store.getters['login/getLoginUser'] }}</p> -->
-            <!-- <button @click="loginGoogle()">
+            <button @click="loginGoogle()">
               Google ログイン
-            </button> -->
+            </button>
             <button @click="loginTwitter()">
               Twitter ログイン
             </button>
@@ -58,8 +58,21 @@ export default {
     return {
       loginDialog: false
     }
+  },
+  methods: {
+    loginTwitter () {
+      // eslint-disable-next-line no-console
+      console.log('Twitter login')
+      this.$store.dispatch('loginTwitter')
+      this.loginDialog = false
+    },
+    loginGoogle () {
+      // eslint-disable-next-line no-console
+      console.log('Google login')
+      this.$store.dispatch('loginGoogle')
+      this.loginDialog = false
+    }
   }
-
 }
 </script>
 
