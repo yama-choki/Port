@@ -30,7 +30,7 @@
               <v-btn
                 color="blue darken-1"
                 text
-                @click="postDialog = false, add()"
+                @click="postDialog = false, addPost()"
               >
                 投稿する
               </v-btn>
@@ -94,6 +94,13 @@ export default {
         created: '',
         user: ''
       }
+    }
+  },
+  methods: {
+    addPost () {
+      console.log('addPost')
+      this.$store.dispatch('addPost', this.post)
+      this.post.text = ''
     }
   }
 }

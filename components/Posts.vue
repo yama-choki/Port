@@ -11,7 +11,9 @@
             <v-list-item-content>
               <div class="postTop">
                 <p>{{ post.category }}</p>
-                <p>{{ post.created }}</p>
+                <p v-if="post.created">
+                  {{ post.created.toDate() }}
+                </p>
               </div>
               <v-list-item-title class="text-h6 mb-1">
                 <div class="postUser">
@@ -39,10 +41,24 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
+  filters: {
+    dateFilter (date) {
+      return moment(date).format('YYYY/MM/DD HH:mm:ss')
+    }
+  },
   computed: {
     posts () {
       return this.$store.getters.posts
+    }
+  },
+  // async created () {
+  //   await this.getPosts()
+  // },
+  methods: {
+    getPosts () {
+      this.$store.dispatch()
     }
   }
 }

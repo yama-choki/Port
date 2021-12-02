@@ -26,19 +26,19 @@ export default {
     loginGoogle () {
       // eslint-disable-next-line no-console
       console.log('Google login')
-      this.$store.dispatch('header/loginGoogle')
+      this.$store.dispatch('loginGoogle')
       this.dialog = false
     },
     loginTwitter () {
       // eslint-disable-next-line no-console
       console.log('Twitter login')
-      this.$store.dispatch('header/loginTwitter')
+      this.$store.dispatch('loginTwitter')
       this.dialog = false
     },
     loginFacebook () {
       // eslint-disable-next-line no-console
       console.log('Facebook login')
-      this.$store.dispatch('header/loginFacebook')
+      this.$store.dispatch('loginFacebook')
       this.dialog = false
     }
   }
